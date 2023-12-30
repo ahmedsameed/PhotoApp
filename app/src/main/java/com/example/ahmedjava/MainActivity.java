@@ -89,7 +89,14 @@ public class MainActivity extends AppCompatActivity {
     });
 
     }
-}
+    public void onTap(View view){
+        Intent nextpage = new Intent(this,CameraImagesLIst.class);
+        startActivity(nextpage);
+       /* Button b=  (Button) view;
+       // b.setText("Yoo");
+        TextView textView = (TextView) findViewById(R.id.editTextText);
+        textView.setText("Hello, Boy");*/
+}}
 
    /* public void onCreate2(){
         Button b=  findViewById(R.id.button);
