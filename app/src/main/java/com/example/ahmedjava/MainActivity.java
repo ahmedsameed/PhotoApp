@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
             map.put("name", name.getText().toString());
             Call<Void> call = retrofitInterface.executeupdate(map);
-            Log.d("MyTag", "Here we are"+ name.getText().toString());
+            Log.d("OnActivityResult", String.valueOf(map));
             call.enqueue(new Callback<Void>() {
                 @Override
                 public void onResponse(Call<Void> call, Response<Void> response) {

@@ -14,5 +14,6 @@ public interface RetrofitInterface {
     Call<Void> executeupdate(@Body HashMap<String, String> map);
 
     @POST("/imageupdate")
-    Call<Void> imageupdate(@Body HashMap<String, Uri> imageMap);
+    Call<Void> imageupdate(@Body HashMap<String, String> imageMap);
+
 }

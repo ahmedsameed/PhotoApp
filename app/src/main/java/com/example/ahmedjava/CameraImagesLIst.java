@@ -66,7 +66,7 @@ public class CameraImagesLIst extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        HashMap<String, Uri> imageMap = new HashMap<>();
+        HashMap<String, String> imageMap = new HashMap<>();
         Log.d("OnActivityResult","OUT OF IF LOOP 63");
         if (requestCode == REQUEST_PICK_IMAGE && resultCode == RESULT_OK) {
             Uri selectedImageUri = data.getData();
@@ -75,11 +75,13 @@ public class CameraImagesLIst extends AppCompatActivity {
                 Log.d("OnActivityResult","SECOND IF LOOP");
                 imageList.add(selectedImageUri);
                 Log.d("OnActivityResult","imageList.add(selectedImageUri);70");
-                imageMap.put("Ahmed", selectedImageUri);
-                Log.d("OnActivityResult","imageMap.put(\"Ahmed\", selectedImageUri);");
+                imageMap.put("user", selectedImageUri.toString());
+                Log.d("OnActivityResult","SUIIIIII");
                 imageAdapter.notifyDataSetChanged();
                 Call<Void> call = retrofitInterface.imageupdate(imageMap);
-                Log.d("OnActivityResult", String.valueOf(imageMap.get("Ahmed")));
+
+                Log.d("OnActivityResult", String.valueOf(imageMap.get("user")));
+                Log.d("OnActivityResult", String.valueOf(imageMap));
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
