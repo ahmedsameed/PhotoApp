@@ -1,0 +1,1 @@
+A rudimentary photo app with basic UI feature to upload photos from local storage to backend DB. The 'AHA!' feature of this App is yet to be implemented as I research and learn about Network Architecture and FASP data transfer protocols 
